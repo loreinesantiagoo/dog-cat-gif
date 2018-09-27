@@ -1,0 +1,20 @@
+<div>
+    <form #form="ngForm" (ngSubmit)="getInputQuery()" 
+      fxLayout="column row">
+      <mat-form-field>
+        <input type="text" name="name" placeholder="search for gifs" matInput ngModel #searchTerm>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input type="number" name="item" placeholder="eg.5" matInput ngModel #resultCount>
+      </mat-form-field>
+  
+      <div >
+        <span>
+          <button type="submit" mat-raised-button color="accent" [disabled]="!searchTerm.value" (click)="getInputQuery()">
+            <mat-icon>search</mat-icon>Search
+          </button>
+        </span>
+      </div>
+    </form>
+  </div>
